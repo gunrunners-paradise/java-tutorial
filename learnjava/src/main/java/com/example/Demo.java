@@ -72,7 +72,7 @@ public class Demo {
         int indexPos = 0;
         int total = 0;
 
-        while(indexPos < elements.length) {
+        do { // will result in an error if the elements array is empty
 
             System.out.println("Processing: " + indexPos + ", Value:" + elements[indexPos]);
 
@@ -89,7 +89,25 @@ public class Demo {
 
             total += elements[indexPos];
             indexPos++;
-        }
+        } while(indexPos < elements.length);
+
+        /* for( int elementContents : elements ) {
+
+            System.out.println("Processing: " + indexPos + ", Value:" + elementContents);
+
+            if(elementContents < 0) {
+                System.out.println("Break");
+                break;
+            }
+
+            if(elementContents > 99) {
+                System.out.println("Continue");
+                continue;
+            }
+
+            total += elementContents;
+        }*/
+
 
         System.out.println("Sum total: " + total);
 
